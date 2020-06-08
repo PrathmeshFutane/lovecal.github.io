@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>love calculator</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+							}
+				body{
+				background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("images/love.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position:  center;
+				width: 100%;
+				height: 100vh;
+				position : relative;
+				overflow: hidden;
+			
+			}
+			.cardbox{
+				
+				/* justify-content: center;
+				margin-top: 200px;
+				align-items: center;
+				align-content: center; */
+				margin-bottom: -37px;
+		
+			}
+			.forcenter{
+				margin-left: 70px
+				;
+			}
+			.one{
+				font-size: 4.5rem;
+				color: white;
+			}
+			.congo{
+				font-size: 3.5rem;
+				color: white;
+				text-align: center;
+				visibility: hidden;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1 class="text-center  my-5 one" id="myP" onmouseenter ="c1()" onmouseleave="c2()">Love Calculator</h1>
+		<div class="cardbox text-center ">
+			<div class="card w-50 mx-auto mb-5">
+				<div class="card-header bg-danger text-light">You Always have Right Choice</div>
+				<div class="card-body">
+					<form class="form-inline text-center ">
+						<div class="forcenter">
+							<div class="form-group w-75 ">
+								<input type="text" class="form-control mx-1 " placeholder="Your name" id="fname">
+							</div>
+						</div>
+						+
+						<div class="form-group ">
+							<input type="text" class="form-control mx-1" placeholder="Love name" id="sname">
+						</div>
+						
+						<button type="button"  class="btn btn-success mx-auto my-4" onclick="calculate()">Get Your Result</button>
+					</form>
+					<div class="form-group">
+						<input type="text" class="form-control w-50 m-auto" id="result"  placeholder="Your Result">Percentage
+					</div>
+					
+					
+				</div>
+				<div class="card-footer bg-danger text-light ">You are the best couple in the world</div>
+			</div>
+		</div>
+		<div class="congo" id="myc">
+			
+			You are the best couple
+		</div>
+		
+		<script>
+			function calculate()
+			{
+					let fname = document.querySelector('#fname').value;
+				
+					let sname = document. querySelector('#sname').value;
+
+					if(fname=='' || sname==''){
+						alert("Please enter the names");
+					}else{
+						let newvalue = (Math.random())*100;
+						newvalue = Math.floor(newvalue);
+						if(newvalue>=60){
+						document.getElementById("myc").style.visibility = "visible";
+					}
+					else{
+						document.getElementById("myc").style.visibility = "hidden";}
+						document.querySelector('#result').value = newvalue;
+					}
+					
+					
+			}
+			
+			
+			function c1() {
+			document.getElementById("myP").style.color = '#ee82ee';			
+			}
+			function c2() {
+				document.getElementById("myP").style.color='white';
+			}
+		</script>
+	</body>
+</html>
